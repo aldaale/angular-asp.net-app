@@ -9,6 +9,14 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HousingService } from './service/housing.service';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
+import { Routes, RouterModule } from '@angular/router';
+
+
+const appRoutes: Routes = [
+  {path: '', component: PropertyListComponent},
+  {path: 'add-property', component: AddPropertyComponent},
+]
+
 
 @NgModule({
   declarations: [
@@ -24,6 +32,7 @@ import { AddPropertyComponent } from './property/add-property/add-property.compo
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     HousingService
