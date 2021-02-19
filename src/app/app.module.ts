@@ -10,11 +10,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { HousingService } from './service/housing.service';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { Routes, RouterModule } from '@angular/router';
+import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
 
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
+  {path: 'rent-property', component: PropertyListComponent},
   {path: 'add-property', component: AddPropertyComponent},
+  {path: 'property-detail/:id', component: PropertyDetailComponent},
 ]
 
 
@@ -25,6 +28,7 @@ const appRoutes: Routes = [
     PropertyListComponent,
     NavBarComponent,
     AddPropertyComponent,
+    PropertyDetailComponent,
    ],
   imports: [
     BrowserModule,
