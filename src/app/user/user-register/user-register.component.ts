@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-user-register',
@@ -23,7 +23,7 @@ export class UserRegisterComponent implements OnInit {
 
   passwordMatchingValidator(fg: FormGroup): Validators {
     return fg.get('password').value === fg.get('confirmPassword').value ? null :
-    {notMatched: true};
+    {notmatched: true};
   }
   onSubmit() {
     console.log(this.registrationForm);
