@@ -4,15 +4,15 @@
   "SellRent": 2,
   "Name": "Birla House",
   "Type":"House",
-  "Price":2000,
+  "Price":3000,
   "Image": "prop-1"
  },
   {
   "Id":2,
-  "SellRent": 2,
+  "SellRent": 1,
   "Name": "Erose Villa",
   "Type":"House",
-  "Price":4000,
+  "Price":14500,
   "Image": "prop-2"
  },
   {
@@ -33,10 +33,10 @@
  },
   {
   "Id":5,
-  "SellRent": 1,
+  "SellRent": 2,
   "Name": "Marco House",
   "Type":"House",
-  "Price":12500,
+  "Price":2300,
   "Image": "prop-5"
  },
   {
@@ -44,7 +44,15 @@
   "SellRent": 1,
   "Name": "Pearl House",
   "Type":"House",
-  "Price":184000
+  "Price":154000
+ },
+  {
+  "Id":7,
+  "SellRent": 2,
+  "Name": "Town Condo",
+  "Type":"House",
+  "Price":3570,
+  "Image": "prop-6"
  }
 
 ]
