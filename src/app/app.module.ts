@@ -13,6 +13,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { PropertyDetailComponent } from './property/property-detail/property-detail.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserService } from './service/user.service';
+import { AlertifyService } from './service/alertify.service';
 
 
 const appRoutes: Routes = [
@@ -46,7 +48,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    HousingService
+    HousingService,
+    UserService,
+    AlertifyService
   ],
   bootstrap: [AppComponent]
 })
