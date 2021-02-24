@@ -1,3 +1,10 @@
-.d-flex {
+/* .d-flex {
   margin-left: auto;
+} */
+.nav-link {
+  color: rgba(0,0,0,.5);
+}
+
+.nav-link:active {
+  color: black;
 }
