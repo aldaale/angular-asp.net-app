@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { PropertyCardComponent } from './property/property-card/property-card/property-card.component';
 import { PropertyListComponent } from './property/property-list/property-list.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { HousingService } from './service/housing.service';
 import { AddPropertyComponent } from './property/add-property/add-property.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -21,7 +21,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 
 const appRoutes: Routes = [
   {path: '', component: PropertyListComponent},
@@ -29,7 +29,8 @@ const appRoutes: Routes = [
   {path: 'add-property', component: AddPropertyComponent},
   {path: 'user/login', component: UserLoginComponent},
   {path: 'user/register', component: UserRegisterComponent},
-  {path: 'property-detail/:id', component: PropertyDetailComponent},
+  {path: 'property-detail/:id', component: PropertyDetailComponent,
+                                resolve: {prp: PropertyDetailResolverService}},
   {path: '**', component: PropertyListComponent},
 ]
 
@@ -56,13 +57,14 @@ const appRoutes: Routes = [
     TabsModule.forRoot(),
     ButtonsModule.forRoot(),
     BsDatepickerModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     HousingService,
     UserService,
     AlertifyService,
-    AuthService
+    AuthService,
+    PropertyDetailResolverService
   ],
   bootstrap: [AppComponent]
 })
