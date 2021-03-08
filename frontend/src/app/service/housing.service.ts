@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { IProperty } from '../property/IProperty.interface';
 import { Observable, pipe } from 'rxjs';
@@ -11,6 +11,9 @@ import { Property } from '../model/property';
 export class HousingService {
   constructor(private http: HttpClient) {}
 
+  getAllCities(): Observable<string[]> {
+    return this.http.get<string[]>('http://localhost:5000/api/city');
+  }
   getProperty(id: number) {
     return this.getAllProperties().pipe(
       map(propertiesArray => {
