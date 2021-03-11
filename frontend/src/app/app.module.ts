@@ -24,6 +24,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PropertyDetailResolverService } from './property/property-detail/property-detail-resolver.service';
 import { FilterPipe } from './Pipes/filter.pipe';
 import { SortPipe } from './Pipes/sort.pipe';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 const appRoutes: Routes = [
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     ButtonsModule.forRoot(),
     BsDatepickerModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    CarouselModule.forRoot()
 
   ],
   providers: [
